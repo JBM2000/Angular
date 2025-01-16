@@ -1,0 +1,11 @@
+<p>Formularios template driver - basados en plantillas</p>
+<p>basado en directivas y asincrono. Menos escalable y peor validacion</p>
+<form #formTemplateDriven="ngForm" (ngSubmit)="onSubmit(formTemplateDriven)">
+
+  <label for="name">Nombre</label>
+  <input type="text"  id="nombre" name="nombre" ngModel required>
+  <label for="email">Email</label>
+  <input type="email" class="form-control" id="email" name="email" ngModel required>
+
+  <input type="submit" value="Enviar">
+</form>

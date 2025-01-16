@@ -1,0 +1,75 @@
+<div class="contact-form">
+    <h2>Contacto</h2>
+    <form (submit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <fieldset>
+        <legend>Formulario de contacto</legend>
+    
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            [(ngModel)]="contacto.email"
+            required
+            email
+          />
+        </div>
+    
+        <!-- Asunto -->
+        <div class="mb-3">
+          <label for="asunto" class="form-label">Asunto:</label>
+          <input
+            type="text"
+            id="asunto"
+            name="asunto"
+            class="form-control"
+            [(ngModel)]="contacto.asunto"
+            required
+          />
+        </div>
+    
+    
+        <!-- Mensaje -->
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje:</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            class="form-control"
+            [(ngModel)]="contacto.mensaje"
+            required
+          ></textarea>
+        </div>
+    
+        <!-- CheckBox de privacidad -->
+        <div class="mb-3">
+          <label class="form-check-label">
+            <input
+              type="checkbox"
+              id="privacidad"
+              name="privacidad"
+              class="form-check-input"
+              [(ngModel)]="contacto.privacidad"
+              required
+            />
+            Acepto la política de privacidad
+          </label>
+        </div>
+    
+        <!-- Botón de envío -->
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!contactForm.valid"
+          >
+            Enviar
+          </button>
+        </div>
+      </fieldset>
+    </form>
+    
+  

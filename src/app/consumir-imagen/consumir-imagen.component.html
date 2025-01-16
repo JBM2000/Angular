@@ -1,0 +1,39 @@
+
+<!-- <ul>
+    <li *ngFor="let cart of carts">
+        <ul>
+            <li *ngFor="let product of cart.products">
+                <img [src]="product.thumbnail" alt="{{ product.title }}" />
+                <h3>{{ product.title }}</h3>
+                <p>Precio: ${{ product.price }}</p>
+            </li>
+        </ul>
+        {{ cart.thumbnailUrl }}
+    </li>
+</ul>
+<div class="card" style="width: 18rem;" *ngFor="let cart of carts">
+    <img [src]="cart.thumbnailUrl" class="card-img-top" alt="{{ cart.title }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ cart.title }}</h5>
+        <p class="card-text">Precio: ${{ cart.price }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div> -->
+<div class="row row-cols-1 row-cols-md-4 g-4">
+<div class="card" style="width: 40rem;" *ngFor="let cart of carts">
+    <img [src]="cart.thumbnailUrl" class="card-img-top" alt="{{ cart.title }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ cart.title }}</h5>
+        <p class="card-text">Precio total: ${{ cart.price }}</p>
+        <ul>
+            <li *ngFor="let product of cart.products">
+                <img [src]="product.thumbnail" alt="{{ product.title }}" style="width: 100px; height: 100px;" />
+                <h6>{{ product.title }}</h6>
+                <p>Precio: ${{ product.price }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+  

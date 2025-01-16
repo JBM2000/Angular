@@ -1,0 +1,67 @@
+<div class="contact-form">
+    <h2>Contacto</h2>
+    <form [formGroup]="formularioContacto" (ngSubmit)="enviarFormulario()">
+      <!-- Email -->
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          required
+        />
+        <div *NgIf="email.invalid && email.touched" class="error">
+          El email es requerido y debe ser válido.
+        </div>
+      </div>
+  
+      <!-- Asunto -->
+      <div>
+        <label for="asunto">Asunto:</label>
+        <input
+          type="text"
+          id="asunto"
+          formControlName="asunto"
+          required
+        />
+        <div *NgIf="asunto.invalid && asunto.touched" class="error">
+          El asunto es requerido.
+        </div>
+      </div>
+  
+      <!-- Mensaje -->
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea
+          id="mensaje"
+          formControlName="mensaje"
+          required
+        ></textarea>
+        <div *NgIf="mensaje.invalid && mensaje.touched" class="error">
+          El mensaje es requerido.
+        </div>
+      </div>
+  
+      <!-- CheckBox de privacidad -->
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            id="privacidad"
+            formControlName="privacidad"
+            required
+          />
+          Acepto la política de privacidad
+        </label>
+        <div *NgIf="privacidad.invalid && privacidad.touched" class="error">
+          Debes aceptar la política de privacidad.
+        </div>
+      </div>
+  
+      <!-- Botón de envío -->
+      <div>
+        <button type="submit" [disabled]="formularioContacto.invalid">Enviar</button>
+      </div>
+    </form>
+  </div>
+  

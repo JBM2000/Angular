@@ -1,0 +1,10 @@
+form{
+    color: blue;
+}
+button{
+    background-color: blue;
+    color: white;
+}
+input[type="number"] {
+    color: blue;
+}
